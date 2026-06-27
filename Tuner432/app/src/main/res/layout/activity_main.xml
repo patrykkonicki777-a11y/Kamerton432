@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingStart="28dp"
+        android:paddingEnd="28dp"
+        android:paddingTop="40dp"
+        android:paddingBottom="32dp">
+
+        <!-- Nagłówek -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="KAMERTON 432"
+            android:textColor="#F7F2E7"
+            android:textSize="26sp"
+            android:fontFamily="sans-serif-light"
+            android:letterSpacing="0.18"
+            android:layout_marginBottom="6dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="440 Hz \u2192 432 Hz"
+            android:textColor="#E7C77B"
+            android:textSize="13sp"
+            android:fontFamily="sans-serif"
+            android:letterSpacing="0.25"
+            android:layout_marginBottom="36dp" />
+
+        <!-- Przełącznik trybów -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="28dp">
+
+            <Button
+                android:id="@+id/modeFiles"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:text="PLIKI"
+                android:textColor="#1A1024"
+                android:textSize="14sp"
+                android:letterSpacing="0.15"
+                android:background="@drawable/pill_active"
+                android:stateListAnimator="@null"
+                android:layout_marginEnd="10dp" />
+
+            <Button
+                android:id="@+id/modeRadio"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:text="RADIO"
+                android:textColor="#E7C77B"
+                android:textSize="14sp"
+                android:letterSpacing="0.15"
+                android:background="@drawable/pill_inactive"
+                android:stateListAnimator="@null" />
+        </LinearLayout>
+
+        <!-- Karta TERAZ GRA -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/card_bg"
+            android:paddingTop="22dp"
+            android:paddingBottom="22dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:layout_marginBottom="26dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TERAZ GRA"
+                android:textColor="#9A8FB8"
+                android:textSize="11sp"
+                android:letterSpacing="0.3"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/nowPlaying"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\u2014"
+                android:textColor="#F7F2E7"
+                android:textSize="20sp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:maxLines="2"
+                android:ellipsize="end" />
+
+            <TextView
+                android:id="@+id/nowStation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#E7C77B"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:layout_marginTop="6dp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <!-- Wybór pliku (tryb PLIKI) -->
+        <Button
+            android:id="@+id/pickButton"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:text="Wybierz plik audio"
+            android:textColor="#E7C77B"
+            android:textAllCaps="false"
+            android:textSize="15sp"
+            android:background="@drawable/field_bg"
+            android:stateListAnimator="@null"
+            android:layout_marginBottom="34dp" />
+
+        <!-- Wybór stacji (tryb RADIO) -->
+        <Spinner
+            android:id="@+id/stationSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:background="@drawable/field_bg"
+            android:layout_marginBottom="34dp"
+            android:visibility="gone" />
+
+        <!-- Prostokątny przycisk PLAY/STOP -->
+        <Button
+            android:id="@+id/playButton"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:text="\u25B6"
+            android:textColor="#1A1024"
+            android:textSize="26sp"
+            android:background="@drawable/btn_play"
+            android:stateListAnimator="@null"
+            android:elevation="8dp"
+            android:layout_marginBottom="30dp" />
+
+        <!-- Przełącznik 432 Hz -->
+        <Switch
+            android:id="@+id/switch432"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Konwersja 432 Hz"
+            android:textColor="#C7BEDD"
+            android:fontFamily="sans-serif"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Status -->
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wybierz tryb i graj."
+            android:textColor="#9A8FB8"
+            android:textSize="13sp"
+            android:gravity="center" />
+
+    </LinearLayout>
+</ScrollView>
